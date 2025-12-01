@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eswar">
+    <meta name="description" content="A simple login form using html, css and js.">
+    <title>Login-Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username"/>
+
+            <label>Password</label>
+            <input type="password" id="password"/>
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <div id="msg"></div>
+    </div>
+
+    <script>
+        function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const msg = document.getElementById('msg');
+
+            if(user === "admin" && pass === "1234") {
+                msg.style.color = "green";
+                msg.innerText = "Login Successful!";
+            } else {
+                msg.style.color = "red";
+                msg.innerText = "Invalid Credentials!"; 
+            }
+        }
+    </script>
+</body>
+</html>
